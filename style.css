@@ -1,0 +1,114 @@
+body {
+	margin:0;
+	background-color: #111111;
+	background-image: url('phoni/z.png');
+	background-size: contain;
+	background-position: center center;
+	background-repeat: no-repeat;
+	transition: background-image 0.2s ease;
+	position: relative;
+	height: 100vh;
+	}
+div {
+	position: absolute;
+	display: block;
+	height: 10%;
+	width: auto;
+	cursor: default;
+	}
+button {
+	transform: translate(-50%, -50%);
+	position: absolute;
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+	width: auto;
+    height: 11%;
+	max-width: 100%;
+	max-height: 100%;
+	}
+button img {
+    display: block;
+	width: 100%;
+    height: 100%;
+    object-fit: contain;
+	}
+#play {
+	top: 85%;
+	left: 50%;
+	}
+#x {
+	top: 50%;
+	left: 57%;
+	}
+#dom_g {
+	top: 7%;
+	left: 61%;
+	}
+#zanovo {
+	top: 7%;
+	left: 55%;
+	}
+#nastroyki	{
+	top: 7%;
+	left: 61%;
+	}
+#z {
+	top: 50%;
+	left: 50%;
+	}
+#dom {
+	top: 50%;
+	left: 43%;
+	}
+#n_u {
+	top: 74%;
+	left: 44%;
+	}
+#s {
+	top: 74%;
+	left: 50%;
+	}
+#u {
+	top: 74%;
+	left: 56%;
+	}
+#zanovo_r {
+	top: 86%;
+	left: 54%;
+	}
+#dom_r {
+	top: 86%;
+	left: 46%;
+	}
+#slovo {
+	font-size:400%;
+	top: 42%;
+	left: 37%;
+	}
+#timer {
+	transform: translate(-50%, -50%);
+	font-size:450%;
+	top: 23%;
+	left: 50%;
+	}
+#ugadal {
+	transform: translate(-50%, -50%);
+	font-size:350%;
+	top: 51%;
+	left: 50%;
+	}
+#ne_ugadal {
+	transform: translate(-50%, -50%);
+	font-size:350%;
+	top: 40%;
+	left: 50%;
+	}
+#result {
+	transform: translate(-50%, -50%);
+	font-size:350%;
+	top: 65%;
+	left: 50%;
+	}
