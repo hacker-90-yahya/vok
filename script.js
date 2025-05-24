@@ -84,6 +84,7 @@ function time() {
 	}, 1000);
 }
 function resultat() {
+	ne_ugadal = slova_10.lenght + ne_ugadal;
 	r_u.textContent = 'хиъна  ' + ugadal;
 	r_nu.textContent = 'ца хиъна  ' + ne_ugadal;
 	r.textContent = 'хилам  ' + (ugadal * 10) + '%';
@@ -198,6 +199,8 @@ play.addEventListener('click', () => {
 		update_b();
 		spisok();
 		time();
+		ugadal = 0;
+		ne_ugadal = 0;
 	}
 });
 zanovo_r.addEventListener('click', () => {
@@ -207,6 +210,8 @@ zanovo_r.addEventListener('click', () => {
 		update_b();
 		spisok();
 		time();
+		ugadal = 0;
+		ne_ugadal = 0;
 	}
 });
 zanovo.addEventListener('click', () => {
@@ -215,6 +220,8 @@ zanovo.addEventListener('click', () => {
 		update_b();
 		spisok();
 		time();
+		ugadal = 0;
+		ne_ugadal = 0;
 	}
 });
 nastroyki.addEventListener('click', () => {
