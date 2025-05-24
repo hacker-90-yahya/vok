@@ -84,7 +84,7 @@ function time() {
 	}, 1000);
 }
 function resultat() {
-	ne_ugadal = slova_10.lenght + ne_ugadal;
+	ne_ugadal = slova_10.length + ne_ugadal;
 	r_u.textContent = 'хиъна  ' + ugadal;
 	r_nu.textContent = 'ца хиъна  ' + ne_ugadal;
 	r.textContent = 'хилам  ' + (ugadal * 10) + '%';
