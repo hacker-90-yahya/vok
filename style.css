@@ -119,27 +119,3 @@ button img {
 	top: 62%;
 	left: 50%;
 	}
-#timer {
-	transform: translate(-50%, -50%);
-	font-size:450%;
-	top: 23%;
-	left: 50%;
-	}
-#ugadal {
-	transform: translate(-50%, -50%);
-	font-size:350%;
-	top: 50%;
-	left: 50%;
-	}
-#ne_ugadal {
-	transform: translate(-50%, -50%);
-	font-size:350%;
-	top: 40%;
-	left: 50%;
-	}
-#result {
-	transform: translate(-50%, -50%);
-	font-size:350%;
-	top: 60%;
-	left: 50%;
-	}
