@@ -30,11 +30,11 @@
 		<code><div id='result'></div></code>
 		<script src='script.js'></script>
 		<script>
-			window.addEventListener('orientationchange', () => {
-			if (window.orientation === 90 || window.orientation === -90) {
-			alert('экран нис де');
-				}
-			});
+		  window.addEventListener('orientationchange', () => {
+		    if (window.orientation === 90 || window.orientation === -90) {
+		      alert('экран нис де');  // Это сообщение выскочит при повороте в горизонтальный режим
+		    }
+		  });
 		</script>
 	</body>
 </html>
