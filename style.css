@@ -2,7 +2,8 @@ body {
 	margin:0;
 	background-color: #111111;
 	background-image: url('phoni/z.png');
-	background-size: contain;
+	height: 100vh;
+    background-size: 100% 100%;
 	background-position: center center;
 	background-repeat: no-repeat;
 	transition: background-image 0.2s ease;
@@ -50,15 +51,15 @@ button img {
 	}
 #dom_g {
 	top: 7%;
-	left: 85%;
+	left: 80%;
 	}
 #zanovo {
 	top: 7%;
-	left: 65%;
+	left: 70%;
 	}
 #nastroyki	{
 	top: 7%;
-	left: 85%;
+	left: 80%;
 	}
 #z {
 	top: 50%;
