@@ -91,8 +91,32 @@ button img {
 	}
 #slovo {
 	transform: translate(-50%, -50%);
-	font-size:400%;
+	font-size:10vh;
 	top: 48%;
+	left: 50%;
+	}
+#timer {
+	transform: translate(-50%, -50%);
+	font-size:10vh;
+	top: 23%;
+	left: 50%;
+	}
+#ugadal {
+	transform: translate(-50%, -50%);
+	font-size:10vh;
+	top: 49%;
+	left: 50%;
+	}
+#ne_ugadal {
+	transform: translate(-50%, -50%);
+	font-size:10vh;
+	top: 38%;
+	left: 50%;
+	}
+#result {
+	transform: translate(-50%, -50%);
+	font-size:10vh;
+	top: 62%;
 	left: 50%;
 	}
 #timer {
