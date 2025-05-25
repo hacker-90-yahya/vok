@@ -16,6 +16,7 @@ button:active {
   box-shadow: none;
 }
 div {
+	white-space: nowrap;
 	position: absolute;
 	display: block;
 	height: 10%;
