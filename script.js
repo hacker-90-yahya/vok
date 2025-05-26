@@ -84,10 +84,9 @@ function time() {
 	}, 1000);
 }
 function resultat() {
-	ne_ugadal = slova_10.length + ne_ugadal;
 	r_u.textContent = 'хиъна  ' + ugadal;
 	r_nu.textContent = 'ца хиъна  ' + ne_ugadal;
-	r.textContent = 'хилам  ' + (ugadal * 10) + '%';
+	r.textContent = 'хилам  ' + ((100 / (ugadal + ne_ugadal)) * ugadal) + '%';
 	r_nu.style.display = 'block';
 	r_u.style.display = 'block';
 	r.style.display = 'block';
@@ -98,11 +97,9 @@ function no_resultat() {
 	r.style.display = 'none';
 }
 function spisok() {
-	slova_10 = [];
-	for (let i = 0; i < 10; i++) {
-		random = words[Math.floor(Math.random() * words.length)];
-		slova_10.push(random);
-	}
+	slova_10 = [...words];
+	slova_10.sort(() => Math.random() - 0.5);
+	p = 0;
 	slovo.textContent = slova_10[p];
 }
 function p_u() {
