@@ -86,7 +86,7 @@ function time() {
 function resultat() {
 	r_u.textContent = 'хиъна  ' + ugadal;
 	r_nu.textContent = 'ца хиъна  ' + ne_ugadal;
-	r.textContent = 'хилам  ' + ((100 / (ugadal + ne_ugadal)) * ugadal) + '%';
+	r.textContent = 'хилам  ' + ((100 / (ugadal + ne_ugadal)) * ugadal).toFixed(2) + '%';
 	r_nu.style.display = 'block';
 	r_u.style.display = 'block';
 	r.style.display = 'block';
