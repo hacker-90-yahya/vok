@@ -17,13 +17,10 @@ button:active {
 	box-shadow: none;
 }
 div {
-<<<<<<< HEAD
 	white-space: nowrap;
 	position: absolute;
-=======
 	transform: translate(-50%, -50%);
 	position: fixed;
->>>>>>> 2710c73 (добавил новые файлы)
 	display: block;
 	height: 10%;
 	width: auto;
@@ -105,59 +102,45 @@ button img {
 	left: 40%;
 	}
 #slovo {
-<<<<<<< HEAD
 	transform: translate(-50%, -50%);
-=======
 	white-space: nowrap;
->>>>>>> 2710c73 (добавил новые файлы)
 	font-size:10vh;
 	top: 48%;
 	left: 50%;
 	}
 #timer {
-<<<<<<< HEAD
 	transform: translate(-50%, -50%);
-=======
->>>>>>> 2710c73 (добавил новые файлы)
 	font-size:10vh;
 	top: 25%;
 	left: 50%;
 	}
 #ugadal {
-<<<<<<< HEAD
 	transform: translate(-50%, -50%);
-=======
 	white-space: nowrap;
->>>>>>> 2710c73 (добавил новые файлы)
 	font-size:10vh;
 	top: 49%;
 	left: 50%;
 	}
 #ne_ugadal {
-<<<<<<< HEAD
 	transform: translate(-50%, -50%);
-=======
 	white-space: nowrap;
->>>>>>> 2710c73 (добавил новые файлы)
 	font-size:10vh;
 	top: 38%;
 	left: 50%;
 	}
 #result {
-<<<<<<< HEAD
 	transform: translate(-50%, -50%);
 	font-size:10vh;
 	top: 62%;
-=======
 	white-space: nowrap;
 	font-size:10vh;
 	top: 62%;
 	left: 50%;
 	}
 #pravila_txt {
+	white-space: normal;
 	position: absolute;
 	font-size:10vh;
 	top: 10%;
->>>>>>> 2710c73 (добавил новые файлы)
 	left: 50%;
 	}
