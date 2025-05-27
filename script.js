@@ -15,6 +15,9 @@ const zakrit_r = document.getElementById('dom_r');
 const r_u = document.getElementById('ugadal');
 const r_nu = document.getElementById('ne_ugadal');
 const r = document.getElementById('result');
+const pravila = document.getElementById('pravila');
+const p_txt = document.getElementById('pravila_txt');
+const zakrit_pr = document.getElementById('zakrit_pr');
 const z_img = z.querySelector('img');
 const volumeImages = [
 	{ img: 'zvuk(100).png', volume: 1.0 },
@@ -134,6 +137,9 @@ function update_b() {
 		 zanovo.style.display = 'none';
 		 zanovo_r.style.display = 'none';
 		 zakrit_r.style.display = 'none';
+		 pravila.style.display = 'block';
+		 p_txt.style.display = 'none';
+		 zakrit_pr.style.display = 'none';
 		 no_resultat();
 	} else if (bg === 'n.png') {
 		 play.style.display = 'none';
@@ -150,6 +156,9 @@ function update_b() {
 		 zanovo.style.display = 'none';
 		 zanovo_r.style.display = 'none';
 		 zakrit_r.style.display = 'none';
+		 pravila.style.display = 'none';
+		 p_txt.style.display = 'none';
+		 zakrit_pr.style.display = 'none';
 		 no_resultat();
 	} else if (bg === 'g.png') {
 		 play.style.display = 'none';
@@ -166,6 +175,28 @@ function update_b() {
 		 zanovo.style.display = 'block';
 		 zanovo_r.style.display = 'none';
 		 zakrit_r.style.display = 'none';
+		 pravila.style.display = 'none';
+		 p_txt.style.display = 'none';
+		 zakrit_pr.style.display = 'none';
+		 no_resultat();
+	} else if (bg === 'p.png') {
+		 play.style.display = 'none';
+		 nastroyki.style.display = 'none';
+		 zakrit_n.style.display = 'none';
+		 z.style.display = 'none';
+		 u.style.display = 'none';
+		 n_u.style.display = 'none';
+		 s.style.display = 'none';
+		 slovo.style.display = 'none';
+		 timer.style.display = 'none';
+		 zakrit_p.style.display = 'none';
+		 zakrit_g.style.display = 'none';
+		 zanovo.style.display = 'none';
+		 zanovo_r.style.display = 'none';
+		 zakrit_r.style.display = 'none';
+		 pravila.style.display = 'none';
+		 p_txt.style.display = 'block';
+		 zakrit_pr.style.display = 'block';
 		 no_resultat();
 	} else {
 		play.style.display = 'none';
@@ -182,6 +213,9 @@ function update_b() {
 		zanovo.style.display = 'none';
 		zanovo_r.style.display = 'block';
 		zakrit_r.style.display = 'block';
+		pravila.style.display = 'none';
+		p_txt.style.display = 'none';
+		zakrit_pr.style.display = 'none';
 		resultat();
 	}
 	body.style.backgroundImage = `url('phoni/${bg}')`;
@@ -228,6 +262,13 @@ nastroyki.addEventListener('click', () => {
 		update_b();
 	}
 });
+pravila.addEventListener('click', () => {
+	if (bg === 'z.png') {
+		zvuk();
+		bg = 'p.png';
+		update_b();
+	}
+});
 zakrit_g.addEventListener('click', () => {
 	if (bg === 'g.png') {
 		zvuk();
@@ -244,6 +285,13 @@ zakrit_r.addEventListener('click', () => {
 });
 zakrit_n.addEventListener('click', () => {
 	if (bg === 'n.png') {
+		zvuk();
+		bg = 'z.png';
+		update_b();
+	}
+});
+zakrit_pr.addEventListener('click', () => {
+	if (bg === 'p.png') {
 		zvuk();
 		bg = 'z.png';
 		update_b();

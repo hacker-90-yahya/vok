@@ -1,6 +1,7 @@
 body {
 	margin:0;
 	background-color: #111111;
+	background-attachment: fixed;
 	background-image: url('phoni/z.png');
 	height: 100vh;
     background-size: 100% 100%;
@@ -12,12 +13,17 @@ body {
 	}
 button:focus,
 button:active {
-  outline: none;
-  box-shadow: none;
+	outline: none;
+	box-shadow: none;
 }
 div {
+<<<<<<< HEAD
 	white-space: nowrap;
 	position: absolute;
+=======
+	transform: translate(-50%, -50%);
+	position: fixed;
+>>>>>>> 2710c73 (добавил новые файлы)
 	display: block;
 	height: 10%;
 	width: auto;
@@ -25,7 +31,7 @@ div {
 	}
 button {
 	transform: translate(-50%, -50%);
-	position: absolute;
+	position: fixed;
     background: none;
     border: none;
     padding: 0;
@@ -43,7 +49,11 @@ button img {
     object-fit: contain;
 	}
 #play {
-	top: 85%;
+	top: 80%;
+	left: 50%;
+	}
+#pravila {
+	top: 90%;
 	left: 50%;
 	}
 #x {
@@ -52,15 +62,19 @@ button img {
 	}
 #dom_g {
 	top: 7%;
-	left: 90%;
+	left: 85%;
 	}
 #zanovo {
 	top: 7%;
-	left: 70%;
+	left: 65%;
 	}
 #nastroyki	{
 	top: 7%;
-	left: 90%;
+	left: 85%;
+	}
+#zakrit_pr	{
+	top: 7%;
+	left: 85%;
 	}
 #z {
 	top: 50%;
@@ -91,32 +105,59 @@ button img {
 	left: 40%;
 	}
 #slovo {
+<<<<<<< HEAD
 	transform: translate(-50%, -50%);
+=======
+	white-space: nowrap;
+>>>>>>> 2710c73 (добавил новые файлы)
 	font-size:10vh;
 	top: 48%;
 	left: 50%;
 	}
 #timer {
+<<<<<<< HEAD
 	transform: translate(-50%, -50%);
+=======
+>>>>>>> 2710c73 (добавил новые файлы)
 	font-size:10vh;
 	top: 25%;
 	left: 50%;
 	}
 #ugadal {
+<<<<<<< HEAD
 	transform: translate(-50%, -50%);
+=======
+	white-space: nowrap;
+>>>>>>> 2710c73 (добавил новые файлы)
 	font-size:10vh;
 	top: 49%;
 	left: 50%;
 	}
 #ne_ugadal {
+<<<<<<< HEAD
 	transform: translate(-50%, -50%);
+=======
+	white-space: nowrap;
+>>>>>>> 2710c73 (добавил новые файлы)
 	font-size:10vh;
 	top: 38%;
 	left: 50%;
 	}
 #result {
+<<<<<<< HEAD
 	transform: translate(-50%, -50%);
 	font-size:10vh;
 	top: 62%;
+=======
+	white-space: nowrap;
+	font-size:10vh;
+	top: 62%;
+	left: 50%;
+	}
+#pravila_txt {
+	position: absolute;
+	font-size:10vh;
+	top: 10%;
+>>>>>>> 2710c73 (добавил новые файлы)
 	left: 50%;
 	}
