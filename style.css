@@ -1,146 +1,52 @@
-body {
-	margin:0;
-	background-color: #111111;
-	background-attachment: fixed;
-	background-image: url('phoni/z.png');
-	height: 100vh;
-    background-size: 100% 100%;
-	background-position: center center;
-	background-repeat: no-repeat;
-	transition: background-image 0.2s ease;
-	position: relative;
-	height: 100vh;
-	}
-button:focus,
-button:active {
-	outline: none;
-	box-shadow: none;
-}
-div {
-	white-space: nowrap;
-	position: absolute;
-	transform: translate(-50%, -50%);
-	position: fixed;
-	display: block;
-	height: 10%;
-	width: auto;
-	cursor: default;
-	}
-button {
-	transform: translate(-50%, -50%);
-	position: fixed;
-    background: none;
-    border: none;
-    padding: 0;
-    margin: 0;
-    cursor: pointer;
-	width: auto;
-    height: 9%;
-	max-width: 100%;
-	max-height: 100%;
-	}
-button img {
-    display: block;
-	width: 100%;
-    height: 100%;
-    object-fit: contain;
-	}
-#play {
-	top: 80%;
-	left: 50%;
-	}
-#pravila {
-	top: 90%;
-	left: 50%;
-	}
-#x {
-	top: 50%;
-	left: 70%;
-	}
-#dom_g {
-	top: 7%;
-	left: 85%;
-	}
-#zanovo {
-	top: 7%;
-	left: 65%;
-	}
-#nastroyki	{
-	top: 7%;
-	left: 85%;
-	}
-#zakrit_pr	{
-	top: 7%;
-	left: 85%;
-	}
-#z {
-	top: 50%;
-	left: 50%;
-	}
-#dom {
-	top: 50%;
-	left: 30%;
-	}
-#n_u {
-	top: 74%;
-	left: 30%;
-	}
-#s {
-	top: 74%;
-	left: 50%;
-	}
-#u {
-	top: 74%;
-	left: 70%;
-	}
-#zanovo_r {
-	top: 86%;
-	left: 60%;
-	}
-#dom_r {
-	top: 86%;
-	left: 40%;
-	}
-#slovo {
-	transform: translate(-50%, -50%);
-	white-space: nowrap;
-	font-size:10vh;
-	top: 48%;
-	left: 50%;
-	}
-#timer {
-	transform: translate(-50%, -50%);
-	font-size:10vh;
-	top: 25%;
-	left: 50%;
-	}
-#ugadal {
-	transform: translate(-50%, -50%);
-	white-space: nowrap;
-	font-size:10vh;
-	top: 49%;
-	left: 50%;
-	}
-#ne_ugadal {
-	transform: translate(-50%, -50%);
-	white-space: nowrap;
-	font-size:10vh;
-	top: 38%;
-	left: 50%;
-	}
-#result {
-	transform: translate(-50%, -50%);
-	font-size:10vw;
-	top: 62%;
-	white-space: nowrap;
-	font-size:10vh;
-	top: 62%;
-	left: 50%;
-	}
-#pravila_txt {
-	white-space: normal;
-	position: absolute;
-	font-size:10vh;
-	top: 20%;
-	left: 50%;
-	}
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset='utf-8'/>
+		<meta name='author' content='Yahya'/>
+		<meta name='description' content='вок ловзар нохчийн моттах'/>
+		<meta name='keyword' content='Chechen,crocodail,game'/>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>вок</title>
+		<link rel='stylesheet' href='style.css'/>
+		<link rel='icon' type='image/png' href='crocodile.png'/>
+	</head>
+	<body id='body'>
+		<button id='play'><img src='knopki/zastavka/play.png' alt='ловза'/></button>
+		<button id='nastroyki'><img src='knopki/zastavka/nastroyki.png' alt='настройкш'/></button>
+		<button id='x'><img src='knopki/zastavka/zakrit.png' alt='Х'/></button>
+		<button id='z'><img src='knopki/zastavka/gromkost/zvuk(100).png' alt='гӀовгӀа'/></button>
+		<button id='n_u'><img src='knopki/game/false.png' alt='x'/></button>
+		<button id='u'><img src='knopki/game/true.png' alt='v'/></button>
+		<button id='s'><img src='knopki/game/sledushiy.png' alt='>'/></button>
+		<button id='dom'><img src='knopki/menu/dom.png' alt='ц1ено'/></button>
+		<button id='dom_g'><img src='knopki/menu/dom.png' alt='ц1ено'/></button>
+		<button id='zanovo'><img src='knopki/menu/zanovo.png' alt='юха'/></button>
+		<button id='zanovo_r'><img src='knopki/menu/zanovo.png' alt='юха'/></button>
+		<button id='dom_r'><img src='knopki/menu/dom.png' alt='ц1ено'/></button>
+		<button id='pravila'><img src='knopki/zastavka/pravila.png' alt='низамш'/></button>
+		<button id='zakrit_pr'><img src='knopki/zastavka/zakrit.png' alt='x'/></button>
+		<button id='logo'><img src='crocodile.png'></button>
+		<code><div id='slovo'></div></code>
+		<code><div id='timer'></div></code>
+		<code><div id='ugadal'></div></code>
+		<code><div id='ne_ugadal'></div></code>
+		<code><div id='result'></div></code>
+		<code><div id='pravila_txt'>ХӀора ловзархочун декхар ду билгалъяьккхинчу хена чохь тобанан дешнийн говзанчашна ма-хуьллу дукха дешнаш дийца.<hr/>
+			Объяснение еш, цхьана орамах долу дешнаш лело мегар дац, я кхечу къаьмнийн меттанашкара озан гочдарш лело мегар дац.<hr/>
+			Хетарехь долчу дашо тобанна цхьа очко йохьу, ткъа дӀа ца аьллачу дашна тобанна таӀзар до<hr/>
+			Толамхо ю шен баллийн терахь хьалххе билгалбаьккхинчу махка кхаьчна тоба.<hr/></div></code>
+		<script src='script.js'></script>
+		<script>
+		  window.addEventListener('orientationchange', () => {
+		    if (window.orientation === 90 || window.orientation === -90) {
+		      alert('экран нис де');
+		    }
+		  });
+			window.addEventListener('orientationchange', () => {
+			if (window.orientation === 90 || window.orientation === -90) {
+			alert('экран нис де');
+				}
+			});
+		</script>
+	</body>
+</html>
