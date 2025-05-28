@@ -17,7 +17,7 @@ const r_nu = document.getElementById('ne_ugadal');
 const r = document.getElementById('result');
 const pravila = document.getElementById('pravila');
 const p_txt = document.getElementById('pravila_txt');
-const zakrit_pr = document.getElementById('zakrit_pr');
+const logo = document.getElementById('logo');
 const z_img = z.querySelector('img');
 const volumeImages = [
 	{ img: 'zvuk(100).png', volume: 1.0 },
@@ -68,6 +68,8 @@ let words = [
 ];
 let random = words[Math.floor(Math.random() * words.length)];
 let finish_t = null;
+let logo_y = 0;
+let logo_x = 0;
 function time() {
 	let seconds = 60;
 	const timer = document.getElementById("timer");
@@ -89,7 +91,7 @@ function time() {
 function resultat() {
 	r_u.textContent = 'хиъна  ' + ugadal;
 	r_nu.textContent = 'ца хиъна  ' + ne_ugadal;
-	r.textContent = 'хилам  ' + ((100 / (ugadal + ne_ugadal)) * ugadal).toFixed(2) + '%';
+	r.textContent = 'хилам  ' + ((100 / (ugadal + ne_ugadal)) * ugadal).toFixed(0) + '%';
 	r_nu.style.display = 'block';
 	r_u.style.display = 'block';
 	r.style.display = 'block';
@@ -222,7 +224,32 @@ function update_b() {
 }
 
 update_b();
-
+let logo_click = false;
+logo.addEventListener('click', () => {
+	if (logo_click === false) {
+		logo_click = true;
+		zvuk();
+		logo_y += 150;
+		logo.style.transform = `translateY(${logo_y}vh) rotate(15deg)`;
+		setTimeout(() => {
+			logo_x -= 100;
+			logo.style.transform = `translateX(${logo_x}vw) rotate(0deg)`;
+		}, 1250);
+		setTimeout(() => {
+			logo_y -= 250;
+			logo.style.transform = `translateY(${logo_y}vh) rotate(0deg)`;
+		}, 2500);
+		setTimeout(() => {
+			logo_x += 100;
+			logo.style.transform = `translateX(${logo_x}vw) rotate(0deg)`;
+		}, 3750);
+		setTimeout(() => {
+			logo_y += 100;
+			logo.style.transform = `translateY(${logo_y}vh) rotate(0deg)`;
+		}, 5000);
+		setTimeout(() => {logo_click = false;}, 6250);
+	}
+});
 play.addEventListener('click', () => {
 	if (bg === 'z.png') {
 		zvuk();
