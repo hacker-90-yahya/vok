@@ -82,16 +82,14 @@ button img {
 	left: 30%;
 	}
 #n_u {
+	height: 18%;
 	top: 74%;
-	left: 30%;
-	}
-#s {
-	top: 74%;
-	left: 50%;
+	left: 35%;
 	}
 #u {
+	height: 18%;
 	top: 74%;
-	left: 70%;
+	left: 65%;
 	}
 #zanovo_r {
 	top: 86%;
@@ -100,6 +98,21 @@ button img {
 #dom_r {
 	top: 86%;
 	left: 40%;
+	}
+#hala {
+	height:30%;
+	top: 70%;
+	left: 50%;
+	}
+#yukera {
+	height:30%;
+	top: 50%;
+	left: 50%;
+	}
+#atta {
+	height:30%;
+	top: 30%;
+	left: 50%;
 	}
 #logo {
 	transition:transform 1.2s ease-in;
@@ -120,6 +133,7 @@ button img {
 	left: 50%;
 	}
 #ugadal {
+	width:60vw;
 	transform: translate(-50%, -50%);
 	white-space: nowrap;
 	font-size:10vh;
@@ -127,6 +141,7 @@ button img {
 	left: 50%;
 	}
 #ne_ugadal {
+	width:60vw;
 	transform: translate(-50%, -50%);
 	white-space: nowrap;
 	font-size:10vh;
@@ -134,9 +149,8 @@ button img {
 	left: 50%;
 	}
 #result {
+	width:60vw;
 	transform: translate(-50%, -50%);
-	font-size:10vw;
-	top: 62%;
 	white-space: nowrap;
 	font-size:10vh;
 	top: 62%;
