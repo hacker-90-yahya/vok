@@ -4,7 +4,6 @@ const nastroyki = document.getElementById('nastroyki');
 const zakrit_p = document.getElementById('x');
 const u = document.getElementById('u');
 const n_u = document.getElementById('n_u');
-const s = document.getElementById('s');
 const z = document.getElementById('z');
 const slovo = document.getElementById('slovo');
 const zakrit_n = document.getElementById('dom');
@@ -18,6 +17,10 @@ const r = document.getElementById('result');
 const pravila = document.getElementById('pravila');
 const p_txt = document.getElementById('pravila_txt');
 const logo = document.getElementById('logo');
+const atta = document.getElementById('atta');
+const yukera = document.getElementById('yukera');
+const hala = document.getElementById('hala');
+//const dalee_s = document.getElementById('dalee_s');
 const z_img = z.querySelector('img');
 const volumeImages = [
 	{ img: 'zvuk(100).png', volume: 1.0 },
@@ -32,8 +35,8 @@ let slova_10 = [];
 let bg = 'z.png';
 let volumeLevel = 1.0;
 let volumeStage = 0;
-let words = [
-		"Ӏаж", "бепиг", "хи", "цӀа", "малх", "бутт", "седа", "дитт", "зезаг", "хьун",
+let slojnost = 'words_easy';
+let words_easy = ["Ӏаж", "бепиг", "хи", "цӀа", "малх", "бутт", "седа", "дитт", "зезаг", "хьун",
         "лам", "хи", "жӀаьла", "цициг", "олхазар", "чӀара", "стаг", "кӀант", "йоӀ", "да",
         "нана", "ваша", "йиша", "деда", "баба", "доттагӀ", "мостагӀ", "ишкола", "жайна",
         "стол", "гӀант", "кор", "неӀ", "пен", "чоь", "маьнги", "машен", "некъ", "тӀай",
@@ -44,8 +47,8 @@ let words = [
         "бутт", "кӀира", "сахьт", "минот", "шолгӀа", "дош", "илли", "хелхар", "ловзар", "ведда",
         "кхиссавала", "велар", "бӀаьрхиш", "хазахетар", "кхерар", "безам", "баьццара",
 		"доттагӀалла", "ницкъ", "могашалла", "хаарш", "некъ",  "къолам", "маьӀна", "жайна",
-        "эмкал", "жӀаьла", "цициг", "олхазар", "чӀара", "говр", "етт", "хьакха", "жий", "газа",
-        "пхьагал", "ча", "борз", "цхьогал", "цӀоькъалом", "лом", "пил", "къамел", "маймал",
+        "эмкал", "жӀаьла", "цициг", "олхазар", "чӀара", "говр", "етт", "хьакха", "жий", "газа",];
+let words_medium = ["пхьагал", "ча", "борз", "цхьогал", "цӀоькъалом", "лом", "пил", "къамел", "маймал",
         "ГӀаз", "котам", "кхокха", "Туркойчоь", "пхьид", "уьнтӀапхьид", "лаьхьа", "гезг",
         "цӀазам", "полла", "гӀалат", "накхармоза", "чуьрк", "цаьпцалг", "ЦӀен", "сийна",
 		"можа", "Ӏаьржа", "кӀайн", "сира", "хӏаваъ", "диинат", "зингат", "ӏаж", "пхьарс", "пха",
@@ -54,8 +57,8 @@ let words = [
 		"балл", "бер", "чӏениг", "гӏала", "марха", "кӏора", "къахьо", "цӏаста", "бамба", "етт",
 		"къиг", "йоӀ", "де", "далар", "гӏум-аре", "дошам", "жӏаьла", "вир", "тӏадам", "бад",
 		"лерг", "хӏоа", "пийл", "мостагӏ", "суьйре", "бӏаьрг", "юьхь", "доьзал", "да", "пӏелг",
-		"чӏара", "борц", "бутт", "гу", "дахка", "дин", "ког", "кхокха", "лам", "малх", "меза",
-        "моза", "мотт", "мохк", "некъ", "неца", "нохчийн мотт", "нуй", "пах", "цӏе", "аьрзу",
+		"чӏара", "борц", "бутт", "гу", "дахка", "дин", "ког", "кхокха", "лам", "малх", "меза",];
+let words_hard = ["моза", "мотт", "мохк", "некъ", "неца", "нохчийн мотт", "нуй", "пах", "цӏе", "аьрзу",
 		"пӏенда", "сай", "сеса", "сула", "тхов", "тӏаде", "тӏеда", "херх", "хола", "хьач",
         "авст", "агӏо", "алкханч", "бадарж", "бедар", "бож", "боргӏал", "борз", "борш",
         "бухӏа", "цхьаъ", "шиъ", "кхоъ", "диъ", "пхиъ", "ялх", "ворхІ", "бархІ", "исс", "итт",
@@ -64,9 +67,8 @@ let words = [
 		"ткъе ялх", "ткъе ворхІ", "ткъе бархІ", "ткъе исс", "тъке итт", "шовзткъа", "бумбари",
 		"кхузткъа", "кхузткъе итт", "дезткъа", "дезткъе итт", "бІе", "куьзга", "кор",
         "хӀорд", "мутта", "хан", "сахьт", "гӀайба", "неӀ","лахьорч", "дуьне", "пхьид",
-		"тӀом", "Оьрсийчоь", "саьрмик", "болх", "иту", "четар", "абат", "шовзткъе итт",
-];
-let random = words[Math.floor(Math.random() * words.length)];
+		"тӀом", "Оьрсийчоь", "саьрмик", "болх", "иту", "четар", "абат", "шовзткъе итт",];
+let random = 23;
 let finish_t = null;
 let logo_y = 0;
 let logo_x = 0;
@@ -81,10 +83,12 @@ function time() {
 		seconds--;
 		timer.textContent = seconds;
 		if (seconds <= 0) {
-			clearInterval(finish_t);
-			finish_t = null;
-			bg = 'r.png';
-			update_b();
+			if (bg === 'g.png') {
+				clearInterval(finish_t);
+				finish_t = null;
+				bg = 'r.png';
+				update_b();
+			}
 		}
 	}, 1000);
 }
@@ -102,7 +106,7 @@ function no_resultat() {
 	r.style.display = 'none';
 }
 function spisok() {
-	slova_10 = [...words];
+//	slova_10 = [...window[slojnost]];
 	slova_10.sort(() => Math.random() - 0.5);
 	p = 0;
 	slovo.textContent = slova_10[p];
@@ -123,6 +127,15 @@ function zvuk() {
 	zvuk_click.volume = volumeLevel;
 	zvuk_click.play();
 }
+function dalee_s() {
+	zvuk();
+	bg = 'g.png';
+	update_b();
+	spisok();
+	time();
+	ugadal = 0;
+	ne_ugadal = 0;
+}
 function update_b() {
 	if (bg === 'z.png') {
 		 play.style.display = 'block';
@@ -131,7 +144,6 @@ function update_b() {
 		 z.style.display = 'none';
 		 u.style.display = 'none';
 		 n_u.style.display = 'none';
-		 s.style.display = 'none';
 		 slovo.style.display = 'none';
 		 timer.style.display = 'none';
 		 zakrit_p.style.display = 'none';
@@ -142,6 +154,10 @@ function update_b() {
 		 pravila.style.display = 'block';
 		 p_txt.style.display = 'none';
 		 zakrit_pr.style.display = 'none';
+		 atta.style.display = 'none';
+		 yukera.style.display = 'none';
+		 hala.style.display = 'none';
+		 //dalee_s.style.display = 'none';
 		 no_resultat();
 	} else if (bg === 'n.png') {
 		 play.style.display = 'none';
@@ -150,7 +166,6 @@ function update_b() {
 		 z.style.display = 'block';
 		 u.style.display = 'none';
 		 n_u.style.display = 'none';
-		 s.style.display = 'none';
 		 slovo.style.display = 'none';
 		 timer.style.display = 'none';
 		 zakrit_p.style.display = 'block';
@@ -161,6 +176,10 @@ function update_b() {
 		 pravila.style.display = 'none';
 		 p_txt.style.display = 'none';
 		 zakrit_pr.style.display = 'none';
+		 atta.style.display = 'none';
+		 yukera.style.display = 'none';
+		 hala.style.display = 'none';
+		 //dalee_s.style.display = 'none';
 		 no_resultat();
 	} else if (bg === 'g.png') {
 		 play.style.display = 'none';
@@ -169,7 +188,6 @@ function update_b() {
 		 z.style.display = 'none';
 		 u.style.display = 'block';
 		 n_u.style.display = 'block';
-		 s.style.display = 'block';
 		 slovo.style.display = 'block';
 		 timer.style.display = 'block';
 		 zakrit_p.style.display = 'none';
@@ -180,6 +198,10 @@ function update_b() {
 		 pravila.style.display = 'none';
 		 p_txt.style.display = 'none';
 		 zakrit_pr.style.display = 'none';
+		 atta.style.display = 'none';
+		 yukera.style.display = 'none';
+		 hala.style.display = 'none';
+		 //dalee_s.style.display = 'none';
 		 no_resultat();
 	} else if (bg === 'p.png') {
 		 play.style.display = 'none';
@@ -188,7 +210,6 @@ function update_b() {
 		 z.style.display = 'none';
 		 u.style.display = 'none';
 		 n_u.style.display = 'none';
-		 s.style.display = 'none';
 		 slovo.style.display = 'none';
 		 timer.style.display = 'none';
 		 zakrit_p.style.display = 'none';
@@ -199,6 +220,32 @@ function update_b() {
 		 pravila.style.display = 'none';
 		 p_txt.style.display = 'block';
 		 zakrit_pr.style.display = 'block';
+		 atta.style.display = 'none';
+		 yukera.style.display = 'none';
+		 hala.style.display = 'none';
+		 //dalee_s.style.display = 'none';
+		 no_resultat();
+	} else if (bg === 's.png') {
+		 play.style.display = 'none';
+		 nastroyki.style.display = 'none';
+		 zakrit_n.style.display = 'none';
+		 z.style.display = 'none';
+		 u.style.display = 'none';
+		 n_u.style.display = 'none';
+		 slovo.style.display = 'none';
+		 timer.style.display = 'none';
+		 zakrit_p.style.display = 'none';
+		 zakrit_g.style.display = 'none';
+		 zanovo.style.display = 'none';
+		 zanovo_r.style.display = 'none';
+		 zakrit_r.style.display = 'none';
+		 pravila.style.display = 'none';
+		 p_txt.style.display = 'none';
+		 zakrit_pr.style.display = 'none';
+		 atta.style.display = 'block';
+		 yukera.style.display = 'block';
+		 hala.style.display = 'block';
+		 //dalee_s.style.display = 'block';
 		 no_resultat();
 	} else {
 		play.style.display = 'none';
@@ -207,7 +254,6 @@ function update_b() {
 		z.style.display = 'none';
 		u.style.display = 'none';
 		n_u.style.display = 'none';
-		s.style.display = 'none';
 		slovo.style.display = 'none';
 		timer.style.display = 'none';
 		zakrit_p.style.display = 'none';
@@ -218,6 +264,10 @@ function update_b() {
 		pravila.style.display = 'none';
 		p_txt.style.display = 'none';
 		zakrit_pr.style.display = 'none';
+		atta.style.display = 'none';
+		yukera.style.display = 'none';
+		hala.style.display = 'none';
+		//dalee_s.style.display = 'none';
 		resultat();
 	}
 	body.style.backgroundImage = `url('phoni/${bg}')`;
@@ -253,12 +303,29 @@ logo.addEventListener('click', () => {
 play.addEventListener('click', () => {
 	if (bg === 'z.png') {
 		zvuk();
-		bg = 'g.png';
+		bg = 's.png';
 		update_b();
-		spisok();
-		time();
-		ugadal = 0;
-		ne_ugadal = 0;
+	}
+});
+atta.addEventListener('click', () => {
+	if (bg === 's.png') {
+		slojnost = 'words_easy';
+		dalee_s();
+		slova_10 = [...words_easy];
+	}
+});
+yukera.addEventListener('click', () => {
+	if (bg === 's.png') {
+		slojnost = 'words_medium';
+		dalee_s();
+		slova_10 = [...words_medium];
+	}
+});
+hala.addEventListener('click', () => {
+	if (bg === 's.png') {
+		slojnost = 'words_hard';
+		dalee_s();
+		slova_10 = [...words_hard];
 	}
 });
 zanovo_r.addEventListener('click', () => {
@@ -347,17 +414,6 @@ n_u.addEventListener('click', () => {
 		zvuk();
 		p_u();
 		ne_ugadal++;
-		update_b();
-	}
-});
-s.addEventListener('click', () => {
-	if (bg === 'g.png') {
-		zvuk();
-		p++
-		if (p > (slova_10.length - 1)) {
-			p = 0;
-		}
-		slovo.textContent = slova_10[p];
 		update_b();
 	}
 });
