@@ -20,7 +20,9 @@ const logo = document.getElementById('logo');
 const atta = document.getElementById('atta');
 const yukera = document.getElementById('yukera');
 const hala = document.getElementById('hala');
-//const dalee_s = document.getElementById('dalee_s');
+const dalee_k = document.getElementById('dalee');
+const plus = document.getElementById('plus');
+const komand = document.getElementById('komand');
 const z_img = z.querySelector('img');
 const volumeImages = [
 	{ img: 'zvuk(100).png', volume: 1.0 },
@@ -106,7 +108,6 @@ function no_resultat() {
 	r.style.display = 'none';
 }
 function spisok() {
-//	slova_10 = [...window[slojnost]];
 	slova_10.sort(() => Math.random() - 0.5);
 	p = 0;
 	slovo.textContent = slova_10[p];
@@ -128,11 +129,12 @@ function zvuk() {
 	zvuk_click.play();
 }
 function dalee_s() {
+	timer.textContent = 00;
 	zvuk();
 	bg = 'g.png';
 	update_b();
+	najatie1 = true;
 	spisok();
-	time();
 	ugadal = 0;
 	ne_ugadal = 0;
 }
@@ -157,7 +159,8 @@ function update_b() {
 		 atta.style.display = 'none';
 		 yukera.style.display = 'none';
 		 hala.style.display = 'none';
-		 //dalee_s.style.display = 'none';
+		 dalee_k.style.display = 'none';
+		 plus.style.display = 'none';
 		 no_resultat();
 	} else if (bg === 'n.png') {
 		 play.style.display = 'none';
@@ -179,7 +182,8 @@ function update_b() {
 		 atta.style.display = 'none';
 		 yukera.style.display = 'none';
 		 hala.style.display = 'none';
-		 //dalee_s.style.display = 'none';
+		 dalee_k.style.display = 'none';
+		 plus.style.display = 'none'
 		 no_resultat();
 	} else if (bg === 'g.png') {
 		 play.style.display = 'none';
@@ -201,7 +205,8 @@ function update_b() {
 		 atta.style.display = 'none';
 		 yukera.style.display = 'none';
 		 hala.style.display = 'none';
-		 //dalee_s.style.display = 'none';
+		 dalee_k.style.display = 'none';
+		 plus.style.display = 'none';
 		 no_resultat();
 	} else if (bg === 'p.png') {
 		 play.style.display = 'none';
@@ -223,7 +228,8 @@ function update_b() {
 		 atta.style.display = 'none';
 		 yukera.style.display = 'none';
 		 hala.style.display = 'none';
-		 //dalee_s.style.display = 'none';
+		 dalee_k.style.display = 'none';
+		 plus.style.display = 'none';
 		 no_resultat();
 	} else if (bg === 's.png') {
 		 play.style.display = 'none';
@@ -245,7 +251,32 @@ function update_b() {
 		 atta.style.display = 'block';
 		 yukera.style.display = 'block';
 		 hala.style.display = 'block';
-		 //dalee_s.style.display = 'block';
+		 dalee_k.style.display = 'none';
+		 plus.style.display = 'none';
+		 no_resultat();
+	} else if (bg === 'k.png') {
+		 play.style.display = 'none';
+		 nastroyki.style.display = 'none';
+		 zakrit_n.style.display = 'none';
+		 z.style.display = 'none';
+		 u.style.display = 'none';
+		 n_u.style.display = 'none';
+		 slovo.style.display = 'none';
+		 timer.style.display = 'none';
+		 zakrit_p.style.display = 'none';
+		 zakrit_g.style.display = 'none';
+		 zanovo.style.display = 'none';
+		 zanovo_r.style.display = 'none';
+		 zakrit_r.style.display = 'none';
+		 pravila.style.display = 'none';
+		 p_txt.style.display = 'none';
+		 zakrit_pr.style.display = 'none';
+		 atta.style.display = 'none';
+		 yukera.style.display = 'none';
+		 hala.style.display = 'none';
+		 dalee_k.style.display = 'block';
+		 plus.style.display = 'block';
+		 //komand.style.display = 'block';
 		 no_resultat();
 	} else {
 		play.style.display = 'none';
@@ -267,7 +298,8 @@ function update_b() {
 		atta.style.display = 'none';
 		yukera.style.display = 'none';
 		hala.style.display = 'none';
-		//dalee_s.style.display = 'none';
+		dalee_k.style.display = 'none';
+		plus.style.display = 'none';
 		resultat();
 	}
 	body.style.backgroundImage = `url('phoni/${bg}')`;
@@ -334,9 +366,9 @@ zanovo_r.addEventListener('click', () => {
 		bg = 'g.png';
 		update_b();
 		spisok();
-		time();
 		ugadal = 0;
 		ne_ugadal = 0;
+		najatie1 = true;
 	}
 });
 zanovo.addEventListener('click', () => {
@@ -344,9 +376,9 @@ zanovo.addEventListener('click', () => {
 		zvuk();
 		update_b();
 		spisok();
-		time();
 		ugadal = 0;
 		ne_ugadal = 0;
+		najatie1 = true;
 	}
 });
 nastroyki.addEventListener('click', () => {
@@ -407,6 +439,10 @@ u.addEventListener('click', () => {
 		p_u();
 		ugadal++;
 		update_b();
+		if (najatie1 === true) {
+			time();
+		}
+		najatie1 = false;
 	}
 });
 n_u.addEventListener('click', () => {
@@ -415,6 +451,10 @@ n_u.addEventListener('click', () => {
 		p_u();
 		ne_ugadal++;
 		update_b();
+		if (najatie1 === true) {
+			time();
+		}
+		najatie1 = false;
 	}
 });
 z.addEventListener('click', () => {
