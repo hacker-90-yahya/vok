@@ -114,6 +114,18 @@ button img {
 	top: 30%;
 	left: 50%;
 	}
+#plus {
+	top: 50%;
+	left: 30%;
+	}
+#dalee {
+	top: 50%;
+	left: 70%;
+	}
+#komand {
+	top: 0vh;
+	left: 50vw;
+}
 #logo {
 	transition:transform 1.2s ease-in;
 	top: 7%;
@@ -129,7 +141,7 @@ button img {
 #timer {
 	transform: translate(-50%, -50%);
 	font-size:10vh;
-	top: 25%;
+	top: 23%;
 	left: 50%;
 	}
 #ugadal {
@@ -137,7 +149,7 @@ button img {
 	transform: translate(-50%, -50%);
 	white-space: nowrap;
 	font-size:10vh;
-	top: 49%;
+	top: 47%;
 	left: 50%;
 	}
 #ne_ugadal {
@@ -145,7 +157,7 @@ button img {
 	transform: translate(-50%, -50%);
 	white-space: nowrap;
 	font-size:10vh;
-	top: 38%;
+	top: 36%;
 	left: 50%;
 	}
 #result {
@@ -153,7 +165,7 @@ button img {
 	transform: translate(-50%, -50%);
 	white-space: nowrap;
 	font-size:10vh;
-	top: 62%;
+	top: 60%;
 	left: 50%;
 	}
 #pravila_txt {
